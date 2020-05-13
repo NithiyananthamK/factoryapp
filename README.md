@@ -16,3 +16,6 @@ Dillinger uses a number of open source projects to work properly:
 * [jQuery] - duh
 * [Python] - For backend developing with Flask frame work
 * [Vue.js] - For front end developing
+
+## Installation
+	- Python3 and PIP packages and node version 12
