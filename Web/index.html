@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+  <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/dataviz.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://www.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+  <script src="https://www.amcharts.com/lib/4/plugins/sunburst.js"></script>
+  <script src="https://www.amcharts.com/lib/4/plugins/timeline.js"></script>
+  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="static/JS/countryNames.js"></script>
+  <script src="static/JS/common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" href="static/JS/Daterange/daterangepicker.css">
+  <script src="static/JS/Daterange/jquery.daterangepicker.min.js"></script>
+  <link rel="stylesheet" href="static/JS/Tooltipster/tooltipster.bundle.min.css">
+  <script src="static/JS/Tooltipster/tooltipster.bundle.min.js"></script>
+  <link rel="stylesheet" href="static/css/custom.css">
+
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script src="https://unpkg.com/chartist-plugin-tooltips@0.0.17"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist-plugin-legend/0.6.2/chartist-plugin-legend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- ADDED RESUMABLE JS -->
+  <script src="static/JS/resumable.js"></script>
+  <link rel="shortcut icon" type="image/png" href="/static/logo-wbg.png" />
+    <title>Factory app</title>
+  </head>
+  <style>
+  body{
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  html, body {
+  height: 100%;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.app, app-dashboard, app-root {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* justify-content: center; */
+    min-height: 100vh;
+}
+</style>
+
+<body class="app sidebar-hidden sidebar-minimized brand-minimized ">
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

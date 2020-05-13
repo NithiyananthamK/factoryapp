@@ -1,0 +1,143 @@
+
+.view {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center,;
+	img {
+		width: auto !important;
+		height: 450px;
+	}
+}
+.w-50 {
+	width: 50% !important;
+}
+.color_blue {
+  color: #00aeef;
+  font-size: 14px;
+}
+.text-right {
+	text-align: right !important;
+}
+.property-d-table {
+	table {
+		border: 1px solid #e5e5e5;
+	}
+}
+.pricetable {
+	width: 100% !important;
+	height: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+.phonecarousel .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: start;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    bottom: -5rem;
+}
+
+
+.phonecarousel .carousel-indicators li {
+    position: relative;
+    width: 150px;
+    height: 10px;
+    background: transparent;
+
+}
+
+.phonecarousel .carousel-indicators .active {
+    background-color: transparent;
+}
+
+.phonecarousel .carousel-control-next-icon {
+  background-image: url('');
+  /* background: black; */
+  border: solid 1px #636363;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+
+@media (min-width:768px){
+
+.clr10{
+    height: 10rem;
+    position: relative;
+    clear: both;
+}
+
+}
+@media (max-width:568px){
+   .view img {
+		width: auto !important;
+		height: 300px;
+	}
+}
+
+.pricetable {
+  th {
+    color: #676767;
+    font-size: 1rem;
+    font-weight: 600;
+		padding: 9px 17px;
+		vertical-align: top;
+		border: 1px solid #e5e5e5;
+		border: none;
+	}
+	td {
+    color: #676767;
+    font-size: 1rem;
+    font-weight: 600;
+		padding: 9px 17px;
+		vertical-align: top;
+		border: 1px solid #e5e5e5;
+		&:nth-child(1) {
+			border-right: none;
+    }
+    &:nth-last-child(1) {
+			border-left: none;
+		}
+	}
+}
+
+
+.btn_fill {
+	background: #00aeef;
+	font-weight: 700 !important;
+	text-align: center;
+	color: #fff;
+	padding: 12px 30px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	display: inline-block;
+}
+.dark_border {
+	&:hover {
+		color: #fff;
+	}
+	&:focus {
+		color: #fff;
+	}
+}
+a.back-to {
+	&:hover {
+		color: #fff;
+	}
+	&:focus {
+		color: #fff;
+	}
+}
