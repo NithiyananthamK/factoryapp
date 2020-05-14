@@ -3,7 +3,7 @@ from flask_restplus import Resource
 import logging
 from ..util.dto import UserDto
 from ..service.user_service import login_user, signup_user
-from app.cura.util.constants import constant
+from app.common.util.constants import constant
 
 api = UserDto.api
 user_auth = UserDto.user_auth

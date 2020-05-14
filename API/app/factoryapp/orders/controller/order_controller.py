@@ -2,7 +2,7 @@ from flask import request
 from flask_restplus import Resource
 import logging
 from ..util.dto import OrderDto
-from ..service.order_service import get_all_available_orders, save_order, delete_order, get_order_byid
+from ..service.order_service import get_all_available_orders, save_order, delete_order, get_order_byid, get_alluser_orders
 
 api = OrderDto.api
 orderdetails = OrderDto.order_details
@@ -64,3 +64,17 @@ class AvailableOrders(Resource):
             print(e)
             print('get_order_byid controller error:' + str(e))
 
+
+@api.route('/get_alluser_orders/<page>/<row>')
+class GetAlluserOrders(Resource):
+    """
+        Get all available orders
+    """
+    @api.doc('get all users orders')
+    def get(self, page, row):
+        # get the post data
+        try:
+            return get_alluser_orders(page, row)
+        except Exception as e:
+            print(e)
+            print('get_alluser_orders controller error:' + str(e))

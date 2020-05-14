@@ -5,10 +5,10 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
 from app import blueprint
-from app.cura import create_app, db
-# from app.cura.model import user, blacklist
+from app.common import create_app, db
+# from app.common.model import user, blacklist
 import logging.config
-from app.cura.util.logging_config import logging_config
+from app.common.util.logging_config import logging_config
 from flask_cors import CORS
 
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')

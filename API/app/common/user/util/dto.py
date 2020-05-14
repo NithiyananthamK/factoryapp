@@ -19,7 +19,7 @@ rolepermission = {
 }
 
 class UserDto:
-    api = Namespace('user', description='user related operations')
+    api = Namespace('User', description='user related operations')
 
     user_auth = api.model('auth_details', {
         'email': fields.String(required=True, description='The email address'),

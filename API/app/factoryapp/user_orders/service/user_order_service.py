@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime, time
 from decimal import Decimal
 from sqlalchemy import update
-from app.cura import db
+from app.common import db
 from app.factoryapp.user_orders.model.user_order import User_Orders
 from app.factoryapp.orders.model.order import Available_Orders
 

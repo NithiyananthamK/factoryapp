@@ -1,4 +1,4 @@
-from app.cura import db, flask_bcrypt
+from app.common import db, flask_bcrypt
 import datetime
 import logging
 #

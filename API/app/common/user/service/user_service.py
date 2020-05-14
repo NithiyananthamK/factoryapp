@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
-from app.cura import db
-from app.cura.user.model.user import User
+from app.common import db
+from app.common.user.model.user import User
 import logging
 
 def login_user(data):

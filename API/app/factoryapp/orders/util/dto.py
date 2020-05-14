@@ -2,9 +2,9 @@ from flask_restplus import Namespace, fields
 
 
 class OrderDto:
-    api = Namespace('user', description='user related operations')
+    api = Namespace('Order', description='Order related operations')
 
-    order_details = api.model('auth_details', {
+    order_details = api.model('order save details', {
         'id': fields.Integer(required=True, description='Order id'),
         'item_type': fields.String(required=True, description='Item type'),
         'item_name': fields.String(required=True, description='Item name'),

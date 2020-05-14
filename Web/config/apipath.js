@@ -16,6 +16,7 @@ module.exports = {
       save_order:"orders/save_order",
       delete_order:"orders/delete_order",
       get_order_byid:"orders/get_order_byid",
+      get_alluser_orders:"orders/get_alluser_orders",
 
       //User orders module
       confirm_userorder:"user_orders/confirm_userorder",

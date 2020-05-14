@@ -11,6 +11,9 @@ const add_order = () => import('@/components/factoryapp/add_order')
 const products = () => import('@/components/factoryapp/order_page')
 const adduser_order = () => import('@/components/factoryapp/adduser_order')
 const myorders = () => import('@/components/factoryapp/myorders')
+const alluser_orders = () => import('@/components/factoryapp/alluser_orders')
+const change_orderstatus = () => import('@/components/factoryapp/change_orderstatus')
+
 Vue.use(Router)
 
 export default new Router({
@@ -54,6 +57,17 @@ export default new Router({
           name: 'myorders',
           component: myorders
         },
+        {
+          path: '/alluser_orders',
+          name: 'alluser_orders',
+          component: alluser_orders
+        },
+        {
+          path: '/change_orderstatus',
+          name: 'change_orderstatus',
+          component: change_orderstatus
+        }
+
       ]
     },
     {

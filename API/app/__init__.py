@@ -1,7 +1,7 @@
 from flask_restplus import Api
 from flask import Blueprint
 
-from .cura.user.controller.user_controller import api as user_ns
+from .common.user.controller.user_controller import api as user_ns
 from .factoryapp.orders.controller.order_controller import api as orders_ns
 from .factoryapp.user_orders.controller.userorder_controller import api as userorders_ns
 
@@ -9,9 +9,9 @@ from .factoryapp.user_orders.controller.userorder_controller import api as usero
 blueprint = Blueprint('api', __name__)
 
 api = Api(blueprint,
-          title='CURA API WITH JWT',
+          title='API WITH JWT',
           version='1.0',
-          description='A CURA rest web service'
+          description='A rest web service'
           )
 
 api.add_namespace(user_ns, path='/user')

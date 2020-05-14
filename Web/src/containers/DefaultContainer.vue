@@ -33,6 +33,13 @@
           <v-list-item-title class="ml-2">ORDERS</v-list-item-title>
         </v-list-item>
 
+        <v-list-item  v-if="user_role=='Admin'" @click="tabsNav('alluser_orders',$event)">
+          <v-list-item-icon>
+            <v-icon>mdi-food-fork-drink</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="ml-2">USER ORDERS</v-list-item-title>
+        </v-list-item>
+
       </v-list>
 
       <div class="text-center" style="position: absolute;bottom: 20px;left: 13%;">
@@ -148,8 +155,12 @@ export default {
         this.$router.push('/'+type)
         break;
 
-        default:
-          break;
+      case "alluser_orders":
+        this.$router.push('/'+type)
+        break;
+
+      default:
+        break;
       }
     }
   },

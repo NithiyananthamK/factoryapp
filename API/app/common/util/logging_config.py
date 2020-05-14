@@ -17,7 +17,7 @@ logging_config = {
             "class": "logging.handlers.RotatingFileHandler",
             "level": "INFO",
             "formatter": "simple",
-            "filename": "cura.log",
+            "filename": "factoryapp.log",
             "maxBytes": 10485760,
             "backupCount": 20,
             "encoding": "utf8"

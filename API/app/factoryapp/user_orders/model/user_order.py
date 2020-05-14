@@ -1,4 +1,4 @@
-from app.cura import db, flask_bcrypt
+from app.common import db, flask_bcrypt
 import datetime
 import logging
 from sqlalchemy.dialects.postgresql import JSONB
@@ -20,4 +20,5 @@ class User_Orders(db.Model):
     created_date = db.Column(db.DateTime, nullable=True, default=datetime.datetime.utcnow())
     updated_date = db.Column(db.DateTime, nullable=True, default=datetime.datetime.utcnow())
     isActive = db.Column(db.Integer, nullable=True)
+    order_status = db.Column(db.Integer, nullable=True)
 

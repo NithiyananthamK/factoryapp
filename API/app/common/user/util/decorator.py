@@ -2,7 +2,7 @@ from functools import wraps
 
 from flask import request
 
-from app.cura.user.service.auth_helper import Auth
+from app.common.user.service.auth_helper import Auth
 
 
 def token_required(f):
