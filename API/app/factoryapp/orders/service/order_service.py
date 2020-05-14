@@ -162,7 +162,7 @@ def get_alluser_orders(page, row):
                 item['item_price'] = str(order[11])
                 item['available_qty'] = order[12]
                 item['ordered_user_name'] = order[13]
-                item['order_status'] = order[13]
+                item['order_status'] = order[14]
 
                 orders_list.append(item)
         res = {
@@ -174,6 +174,27 @@ def get_alluser_orders(page, row):
     except Exception as e:
         print(e)
         print('Handling run-time error:')
+
+
+def update_order_status(data):
+    try:
+        exists_order = User_Orders.query.filter(User_Orders.id == data['id'], User_Orders.isActive == 1).first()
+        if exists_order:
+            exists_order.order_status = int(data['status'])
+            save_changes(exists_order)
+            res = {
+                "Errorcode":9999,
+                "message": "Order status updated successfully"
+            }
+            return  res
+    except Exception as e:
+        print(e)
+        print('Handling run-time error:')
+        res = {
+            "Errorcode": 9997,
+            "message": "Order status update failed"
+        }
+        return res
 
 
 def save_changes(data):

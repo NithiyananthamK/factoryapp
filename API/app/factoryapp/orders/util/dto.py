@@ -13,3 +13,8 @@ class OrderDto:
         'stock_qty': fields.String(required=True, description='Item qty'),
         'created_by': fields.Integer(required=True, description='Order created by'),
     })
+
+    updatestatus = api.model('Update order status', {
+        'id': fields.Integer(required=True, description='id'),
+        'status': fields.String(required=True, description='Order status'),
+    })

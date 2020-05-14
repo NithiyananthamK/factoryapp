@@ -83,7 +83,8 @@ def get_user_orders(page, row, created_by):
         Orderslist = User_Orders.query.join(Available_Orders, User_Orders.order_id == Available_Orders.id). \
             add_columns(User_Orders.id, User_Orders.order_id, Available_Orders.type, User_Orders.amount_to_pay,
                         User_Orders.ordered_qty, Available_Orders.item_name, User_Orders.delivery_address,
-                        User_Orders.delivery_city, User_Orders.delivery_state, User_Orders.delivery_postalcode, Available_Orders.single_qty_price, Available_Orders.available_qty).\
+                        User_Orders.delivery_city, User_Orders.delivery_state, User_Orders.delivery_postalcode, Available_Orders.single_qty_price,
+                        Available_Orders.available_qty, User_Orders.order_status).\
         filter(User_Orders.isActive == 1, User_Orders.created_by == created_by). \
         filter(Available_Orders.isActive == 1).paginate(int(page), int(row), False).items
 
@@ -105,6 +106,7 @@ def get_user_orders(page, row, created_by):
                 item['delivery_postalcode'] = order[10]
                 item['item_price'] = str(order[11])
                 item['available_qty'] = order[12]
+                item['order_status'] = order[13]
 
                 orders_list.append(item)
         res = {

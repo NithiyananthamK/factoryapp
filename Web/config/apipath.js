@@ -17,6 +17,7 @@ module.exports = {
       delete_order:"orders/delete_order",
       get_order_byid:"orders/get_order_byid",
       get_alluser_orders:"orders/get_alluser_orders",
+      update_order_status:"orders/update_order_status",
 
       //User orders module
       confirm_userorder:"user_orders/confirm_userorder",

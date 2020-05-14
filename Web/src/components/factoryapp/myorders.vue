@@ -23,6 +23,12 @@
               </div>
             </template>
 
+            <template v-slot:cell(Status)="{ value }">
+              <span
+                :style="`border-radius: 7px; font-size: 12px; padding: 5px;background: ${getColor(value)};color: white`">
+                {{ getText(value) }}</span>
+            </template>
+
             <template v-slot:cell(Actions)="{ item }">
               <i data-toggle="tooltip" data-placement="top" title="Edit" style="font-size:18px !important;cursor:pointer;"
                 class="v-icon notranslate mdi mdi-pencil theme--light" @click="edit_data(item['Order Id'], item['Id'], item['Item Price'], item['Available Qty'])"></i>
@@ -53,7 +59,7 @@ import VueSwal from 'vue-swal'
       return {
         isAdd:false,
         dataid:"",
-        fields:['Order Id', 'Item name', 'Order type', 'Ordered Qty', 'Total amount to pay', 'Delivery Address',  'Actions'],
+        fields:['Order Id', 'Item name', 'Order type', 'Ordered Qty', 'Total amount to pay', 'Delivery Address', 'Status', 'Actions'],
         items: [],
         isBusy:true,
         currentPage:1,
@@ -74,6 +80,46 @@ import VueSwal from 'vue-swal'
   },
 
   methods: {
+
+    getColor(status) {
+      switch(status){
+        case 1:
+          return 'rgba(249, 9, 9, 0.76)'
+          break;
+        case 2:
+          return 'rgb(249, 164, 9)'
+          break;
+        case 3:
+          return 'rgb(9, 94, 249)'
+          break;
+        case 4:
+          return '#0cad44'
+          break;
+        case 5:
+          return '#293848'
+          break;
+      }
+    },
+
+    getText(status) {
+      switch(status){
+        case 1:
+          return 'Ordered'
+          break;
+        case 2:
+          return 'Packed'
+          break;
+        case 3:
+          return 'Dispatched'
+          break;
+        case 4:
+          return 'Delivered'
+          break;
+        case 5:
+          return 'Returned'
+          break;
+      }
+    },
 
     closepopup(){
         this.$refs.adduser_order.hide();
@@ -150,6 +196,7 @@ import VueSwal from 'vue-swal'
               "Delivery Address": self.data_set[i].delivery_address+","+self.data_set[i].delivery_city+","+self.data_set[i].delivery_state+","+self.data_set[i].delivery_postalcode,
               "Actions":self.data_set[i].id,
               "Item Price":self.data_set[i].item_price,
+              "Status": self.data_set[i].order_status,
               "Available Qty":self.data_set[i].available_qty
             })
         }

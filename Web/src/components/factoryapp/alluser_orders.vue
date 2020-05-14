@@ -29,16 +29,14 @@
 
             <template v-slot:cell(Status)="{ value }">
               <span
-                :style="`border-radius: 7px; font-size: 12px; padding: 5px;background: ${getColor(value)};color: ${getTextColor(value)}`">
-                {{ gettext(value) }}</span>
+                :style="`border-radius: 7px; font-size: 12px; padding: 5px;background: ${getColor(value)};color: white`">
+                {{ getText(value) }}</span>
             </template>
 
             <template v-slot:cell(Actions)="{ item }">
-              <v-btn class="float-right" style="cursor:pointer;background: #00a1f1;color:white;margin-top:-10px" @click="change_status">Change status</v-btn>
+              <b-button v-if="item['Status'] != 4" size="sm" variant="outline-dark" @click="change_status(item['Id'])">CHANGE STATUS</b-button>
             </template>
           </b-table>
-
-
 
 
           <p v-if="items.length == 0 && !isBusy" class="pb-3 text-center font-weight-bold">No available orders found</p>
@@ -63,7 +61,7 @@ import VueSwal from 'vue-swal'
       return {
         isAdd:false,
         dataid:"",
-        fields:['Order Id', 'Ordered user name', 'Item name', 'Order type', 'Available Qty', 'Price', 'Status', 'Actions'],
+        fields:['Order Id', 'Ordered user name', 'Item name', 'Order type', 'Ordered Qty', 'Total amount to pay', 'Status', 'Actions'],
         items: [],
         isBusy:true,
         currentPage:1,
@@ -83,14 +81,15 @@ import VueSwal from 'vue-swal'
 
   methods: {
 
-    change_status(){
+    change_status(id){
       var self = this;
+      self.dataid = id;
       this.$refs.change_orderstatus.show();
     },
 
     closepopup(){
        var self = this;
-        this.$refs.change_orderstatus.hide();
+       this.$refs.change_orderstatus.hide();
     },
 
     getColor(status) {
@@ -98,39 +97,19 @@ import VueSwal from 'vue-swal'
         case 1:
           return 'rgba(249, 9, 9, 0.76)'
           break;
-        case 2':
-          return 'rgba(249, 9, 9, 0.76)'
-          break;
-        case 3:
-          return 'yellow'
-          break;
-        case 4:
-          return 'rgb(97, 218, 138)'
-          break;
-        case 5:
-          return 'rgb(97, 218, 138)'
-          break;
-
-      }
-    },
-
-    getTextColor(status) {
-      switch(status){
-        case 1:
-          return 'white'
-          break;
         case 2:
-          return 'white'
+          return 'rgb(249, 164, 9)'
           break;
         case 3:
-          return 'black'
+          return 'rgb(9, 94, 249)'
           break;
         case 4:
-          return 'black'
+          return '#0cad44'
           break;
         case 5:
-          return 'black'
+          return '#293848'
           break;
+
       }
     },
 
@@ -210,12 +189,13 @@ import VueSwal from 'vue-swal'
           this.totalcount = data.data.total_count
           for(var i=0;i<self.data_set.length;i++){
             self.items.push({
+              "Id": self.data_set[i].id,
               "Order Id": self.data_set[i].order_id,
-              "Ordered user name":self.data_set[i].ordered_user_name
+              "Ordered user name":self.data_set[i].ordered_user_name,
               "Item name": self.data_set[i].item_name,
               "Order type": self.data_set[i].type,
-              "Available Qty": self.data_set[i].available_qty,
-              "Price": self.data_set[i].single_qty_price,
+              "Ordered Qty": self.data_set[i].ordered_qty,
+              "Total amount to pay": self.data_set[i].amount_to_pay,
               "Status": self.data_set[i].order_status,
               "Actions":self.data_set[i].id,
             })

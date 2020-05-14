@@ -2,10 +2,11 @@ from flask import request
 from flask_restplus import Resource
 import logging
 from ..util.dto import OrderDto
-from ..service.order_service import get_all_available_orders, save_order, delete_order, get_order_byid, get_alluser_orders
+from ..service.order_service import get_all_available_orders, save_order, delete_order, get_order_byid, get_alluser_orders, update_order_status
 
 api = OrderDto.api
 orderdetails = OrderDto.order_details
+update_status = OrderDto.updatestatus
 
 @api.route('/getall_orders/<page>/<row>')
 class GetAvailableOrders(Resource):
@@ -78,3 +79,19 @@ class GetAlluserOrders(Resource):
         except Exception as e:
             print(e)
             print('get_alluser_orders controller error:' + str(e))
+
+@api.route('/update_order_status')
+class UpdateOrderstatus(Resource):
+    """
+        Update order
+    """
+    @api.doc('update order status')
+    @api.expect(update_status, validate=True)
+    def post(self):
+        # get the post data
+        try:
+            data = request.json
+            return update_order_status(data)
+        except Exception as e:
+            print(e)
+            print('update_order_status controller error:' + str(e))
