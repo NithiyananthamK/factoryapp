@@ -37,7 +37,7 @@ Flask-WTF==0.14.2
 geographiclib==1.50
 geopy==1.20.0
 honcho==1.0.1
-httplib2==0.9.2
+httplib2==0.18.0
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.11.1
