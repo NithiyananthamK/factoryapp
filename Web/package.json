@@ -31,7 +31,7 @@
     "jquery": "^3.4.1",
     "mdbvue": "^5.4.0",
     "node-core-utils": "^1.17.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "resumable-node": "^1.0.0",
     "sass-loader": "^7.1.0",
     "stylus-loader": "^3.0.2",
