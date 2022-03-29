@@ -57,7 +57,7 @@ numpy==1.18.1
 oauth==1.0.1
 olefile==0.45.1
 pandas==1.0.1
-paramiko==2.0.0
+paramiko==2.10.1
 passlib==1.7.1
 pexpect==4.2.1
 pgeocode==0.2.0
